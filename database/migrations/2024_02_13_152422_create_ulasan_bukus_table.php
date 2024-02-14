@@ -11,15 +11,15 @@ return new class() extends Migration {
     public function up(): void
     {
         Schema::create('ulasan_bukus', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_buku');
-            $table->string('ulasan');
-            $table->integer('rating');
+            $table->id('UlasanID');
+            $table->unsignedBigInteger('UserID');
+            $table->unsignedBigInteger('BukuID');
+            $table->string('Ulasan');
+            $table->integer('Rating');
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_buku')->references('id')->on('bukus');
+            $table->foreign('UserID')->references('id')->on('users');
+            $table->foreign('BukuID')->references('id')->on('bukus');
         });
     }
 

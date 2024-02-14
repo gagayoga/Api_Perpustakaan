@@ -12,11 +12,11 @@ return new class() extends Migration {
     {
         Schema::create('kategoribuku_relasis', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_buku');
-            $table->unsignedBigInteger('id_kategori');
+            $table->unsignedBigInteger('BukuID');
+            $table->unsignedBigInteger('KategoriID');
 
-            $table->foreign('id_buku')->references('id')->on('bukus');
-            $table->foreign('id_kategori')->references('id')->on('kategori_bukus');
+            $table->foreign('BukuID')->references('id')->on('bukus');
+            $table->foreign('KategoriID')->references('id')->on('kategori_bukus');
         });
     }
 

@@ -11,14 +11,14 @@ return new class() extends Migration {
     public function up(): void
     {
         Schema::create('bukus', function (Blueprint $table) {
-            $table->id();
-            $table->string('judul');
-            $table->string('deskripsi');
-            $table->string('penulis');
-            $table->string('penerbit');
-            $table->string('tahun_terbit');
-            $table->string('jumlah_halaman');
-            $table->string('cover_buku');
+            $table->id('BukuID');
+            $table->string('Judul');
+            $table->string('Deskripsi');
+            $table->string('Penulis');
+            $table->string('Penerbit');
+            $table->string('TahunTerbit');
+            $table->string('JumlahHalaman');
+            $table->string('CoverBuku');
             $table->timestamps();
         });
     }

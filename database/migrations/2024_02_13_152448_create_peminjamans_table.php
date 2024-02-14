@@ -11,18 +11,18 @@ return new class() extends Migration {
     public function up(): void
     {
         Schema::create('peminjamans', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_buku');
-            $table->string('kode_peminjaman');
-            $table->date('tanggal_pinjam');
-            $table->date('deadline');
-            $table->date('tanggal_kembali');
-            $table->enum('status', ['Disetujui', 'Ditolak', 'Dipinjam', 'Selesai', 'Proses'])->default(null);
+            $table->id('PeminjamanID');
+            $table->unsignedBigInteger('UserID');
+            $table->unsignedBigInteger('BukuID');
+            $table->string('KodePeminjaman');
+            $table->date('TanggalPinjam');
+            $table->date('Deadline');
+            $table->date('TanggalKembali');
+            $table->enum('Status', ['Disetujui', 'Ditolak', 'Dipinjam', 'Selesai', 'Proses'])->default(null);
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_buku')->references('id')->on('bukus');
+            $table->foreign('UserID')->references('id')->on('users');
+            $table->foreign('BukuID')->references('id')->on('bukus');
         });
     }
 

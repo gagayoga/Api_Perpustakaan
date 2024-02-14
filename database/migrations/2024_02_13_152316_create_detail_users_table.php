@@ -12,13 +12,13 @@ return new class() extends Migration {
     {
         Schema::create('detail_users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user');
-            $table->string('nama_lengkap');
-            $table->string('no_telepon');
-            $table->string('alamat');
+            $table->unsignedBigInteger('UserID');
+            $table->string('NamaLengkap');
+            $table->string('NoTelepon');
+            $table->string('Alamat');
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('UserID')->references('id')->on('users');
         });
     }
 
