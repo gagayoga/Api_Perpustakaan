@@ -18,7 +18,7 @@ return new class() extends Migration {
             $table->string('Alamat');
             $table->timestamps();
 
-            $table->foreign('UserID')->references('id')->on('users');
+            $table->foreign('UserID')->references('UserID')->on('users');
         });
     }
 

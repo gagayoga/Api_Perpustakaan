@@ -15,8 +15,8 @@ return new class() extends Migration {
             $table->unsignedBigInteger('BukuID');
             $table->unsignedBigInteger('KategoriID');
 
-            $table->foreign('BukuID')->references('id')->on('bukus');
-            $table->foreign('KategoriID')->references('id')->on('kategori_bukus');
+            $table->foreign('BukuID')->references('BukuID')->on('bukus');
+            $table->foreign('KategoriID')->references('KategoriID')->on('kategori_bukus');
         });
     }
 

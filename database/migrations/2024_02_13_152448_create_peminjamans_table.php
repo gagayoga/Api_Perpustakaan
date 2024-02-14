@@ -21,8 +21,8 @@ return new class() extends Migration {
             $table->enum('Status', ['Disetujui', 'Ditolak', 'Dipinjam', 'Selesai', 'Proses'])->default(null);
             $table->timestamps();
 
-            $table->foreign('UserID')->references('id')->on('users');
-            $table->foreign('BukuID')->references('id')->on('bukus');
+            $table->foreign('UserID')->references('UserID')->on('users');
+            $table->foreign('BukuID')->references('BukuID')->on('bukus');
         });
     }
 
